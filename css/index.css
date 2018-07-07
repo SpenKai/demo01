@@ -1,0 +1,136 @@
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+body{
+    font-family:-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+blockquote, body, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, img, input, li, ol, p, table, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+    
+}
+.clearfix {
+    zoom: 1;
+}
+
+.container{
+    background-color: rgb(226, 226, 226);
+    width: auto;
+    padding: 0;
+    position: relative; 
+}
+.pay{
+    position:fixed;
+    bottom: 0;
+    margin-bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999;
+    height: 68px;
+}
+@media  screen  and (min-width: 1200px) {
+    .container{
+    background-color: rgb(226, 226, 226);
+    width: 320px;
+    padding: 0;
+    position: relative; 
+    }
+    .pay{
+       position: absolute;
+        margin-bottom: 0;
+        background-color: #fff;
+        width: 320px;
+        z-index: 999;
+        height: 68px;
+    }
+
+}
+
+.selectticket{
+    padding: 0;
+}
+.selectticket table.table  tbody tr >td:first-child {
+    width: 200px;
+}
+.ticketnum{
+    padding: 0px;
+    
+     
+    width: 100%;
+    
+}
+.ticketnum > table{
+    margin: 20px 0 0 0;
+}
+.ticketnum > table >tbody>tr>td{
+    border: none;
+}
+.table {
+    background-color: #fff;  
+}
+.ticketnum-inp{
+    width: 28px;
+}
+
+.pay-btn{
+    margin: 12px;
+    padding: 4px;
+    width: 45%;
+}
+.pay-btn-width{
+    width: 100%;
+    background-color: rgb(0, 119, 255);
+    color: #fff;
+}
+.pay-articl{
+    font-size: 12px;
+    padding: 5px  0px 5px 20px;
+    line-height: 30px;
+
+}
+.pay-articl > p > span {
+    padding: 0 5px 0 5px;
+}
+.user-info{
+    background-color: #fff;
+    padding: 2px;
+    margin: 4px auto;
+}
+.join-info{
+    background-color: #fff;
+    padding: 2px;
+    margin: 4px auto;
+}
+.title{
+   color: rgb(110, 109, 109);
+   padding: 6px 6px 0px 10px;
+   line-height: 2.5;
+}
+.btn-mar{
+    margin: 5px 10px;
+    border-radius: 4px;
+    width: 95%;
+}
+.info-title{
+    padding-left: 10px;
+}
+.disc{
+    font-size: 12px;
+    margin: 0;
+}
+.lesstic{
+    font-size: 12px;
+    margin: 0;
+    color: red;
+}
+.tr{
+    text-align: right;
+}
+.btn-hw{
+    height: 34px;
+    width: 53px;
+}

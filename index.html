@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>活动报名</title>
+    <style>
+    input[type="radio"] + label::before {
+        content: "\a0"; 
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 18px;
+        width: 1em;
+        height: 1em;
+        margin-right: .4em;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 119, 255);
+        text-indent: .15em;
+        line-height: 1; 
+    }
+    input[type="radio"]:checked + label::before {
+        background-color: rgb(0, 119, 255);
+        background-clip: content-box;
+        padding: .2em;
+        transform: rotate(45deg)
+    }
+    input[type="radio"] {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="app">
+        <div class="selectticker">
+                <label for="exampleInputEmail1" class="title">选择票种</label>
+            <table class="table">
+                <tbody>
+                    <tr v-for="(item,index) in productList">
+                        <td style="width:55%;">
+                            <label for="exampleInputEmail1">{{item.pro_name}}</label>
+                            <span class="disc help-block">{{item.pro_purity}}</span>
+                        </td>
+                        <td class="tr">
+                            <label for="exampleInputEmail1">{{item.pro_price.toFixed(2)}}</label>元
+                            <spen class="lesstic help-block">{{item.less}}</spen>
+                        </td>
+                        <td>
+                            <input  type="radio" name="ticiet" :id="item.checkid" >
+                            <label :for="item.checkid"></label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="ticketnum">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                                <label for="exampleInputEmail1 fl" class="title">份数</label>
+                        </td>
+                        <td class="fr">   
+                            <button class="input-group-addon fl btn-hw" v-on:click="counter >0?counter--:''"> - </button>
+                                <input type="text" class=" ticketnum-inp form-control fl" id="exampleInputAmount"  style="width: 46px;" v-model="counter"> 
+                            <button class="input-group-addon fl btn-hw" style="color: rgb(0, 132, 255)" v-on:click="counter++"> + </button>   
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="user-info-title">
+                <label for="exampleInputEmail1" class="title">报名者信息</label>
+            <div class="user-info">
+                    <label for="exampleInputName2" class="info-title">手机号</label>
+                    <input class="form-control btn-mar" type="text" placeholder="请输入您的手机号,将用于接收出票信息">
+                    <label for="exampleInputName2" class="info-title">电子邮箱</label>
+                    <input class="form-control btn-mar" type="text" placeholder="请输入您的电子邮箱,将用于接收出票邮件">
+            </div>
+        </div>
+        <div class="join-info-title">
+            <label for="exampleInputEmail1" class="title">参与者信息</label>
+            <div class="join-info">                                  
+                    <label for="exampleInputName2" class="info-title">姓名</label>
+                    <input class="form-control btn-mar" type="text" placeholder="请输入您的真实姓名">
+                    <label for="exampleInputName2" class="info-title">身份证号</label>
+                    <input class="form-control btn-mar" type="text" placeholder="由于现场安保需要,请输入您的身份证号">
+            </div>
+        </div>
+        <div style="height: 74px;"></div>
+        <div class="pay">
+            <div class="fl pay-articl">
+                <p>共<span style="color: rgb(0, 119, 255);font-size: 18px;">{{ counter }}</span>张票</p>
+                <p>合计<span style="color: rgb(0, 119, 255);font-size: 24px;" >{{ counter * 99.00}}</span>元</p>
+            </div>
+            <div class="fr pay-btn">
+                <button type="button" class="pay-btn-width btn ">立即支付</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>
